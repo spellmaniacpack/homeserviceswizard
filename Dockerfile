@@ -1,8 +1,8 @@
-FROM node:lts-alpine AS base
+FROM node:lts-slim AS base
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package.json package-lock.json ./
+# Copy package.json only to avoid potential Windows/Linux lockfile conflicts
+COPY package.json ./
 
 FROM base AS prod-deps
 RUN npm install --omit=dev
