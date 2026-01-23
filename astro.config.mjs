@@ -10,6 +10,8 @@ export default defineConfig({
   output: "server",
   adapter: node({
     mode: "standalone",
+    host: "0.0.0.0",
+    port: 8080,
   }),
   integrations: [tailwind(), icon()],
 });
