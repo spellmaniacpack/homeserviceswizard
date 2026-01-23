@@ -2,6 +2,8 @@ import type { APIRoute } from 'astro';
 
 export const POST: APIRoute = async ({ request }) => {
     const data = await request.json();
+    console.log("Received form submission:", JSON.stringify(data));
+
     const webhookUrl = import.meta.env.WEBHOOK_URL;
 
     if (!webhookUrl) {
