@@ -1,49 +1,135 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import HeroImage from "~/components/hero-image.astro";
-import type { FooterLink } from "~/types";
+import logoImage from "~/assets/logo.png";
 
-const links: Array<FooterLink> = [
-  {
-    url: "https://astro.build/",
-    description: "Astro's official website",
-    icon: "mdi:home",
-  },
-  {
-    url: "https://github.com/mhyfritz/astro-landing-page",
-    description: "View source on GitHub",
-    icon: "fa-brands:github-alt",
-  },
-  {
-    url: "https://astro.build/chat",
-    description: "Astro on Discord",
-    icon: "fa-brands:discord",
-  },
-  {
-    url: "https://twitter.com/astrodotbuild",
-    description: "Astro on Twitter",
-    icon: "fa-brands:twitter",
-  },
+const currentYear = new Date().getFullYear();
+
+const professionLinks = [
+  { title: "Handyman Insurance", url: "/handyman" },
+  { title: "HVAC Insurance", url: "/hvac" },
+  { title: "Plumber Insurance", url: "/plumber" },
+  { title: "Electrician Insurance", url: "/electrician" },
+  { title: "Landscaping Insurance", url: "/landscaping" },
+  { title: "Roofing Insurance", url: "/roofing" },
+];
+
+const resourceLinks = [
+  { title: "About Us", url: "#" },
+  { title: "Contact", url: "#" },
+  { title: "Privacy Policy", url: "#" },
+  { title: "Terms of Service", url: "#" },
+];
+
+const socialLinks = [
+  { icon: "fa-brands:facebook", url: "#", label: "Facebook" },
+  { icon: "fa-brands:twitter", url: "#", label: "Twitter" },
+  { icon: "fa-brands:linkedin", url: "#", label: "LinkedIn" },
+  { icon: "fa-brands:instagram", url: "#", label: "Instagram" },
 ];
 ---
 
-<footer class="relative flex h-64 items-center justify-center">
-  <div class="absolute inset-0 overflow-hidden opacity-40">
-    <HeroImage />
+<footer class="bg-slate-900 text-white">
+  <!-- Main Footer -->
+  <div class="max-w-6xl mx-auto px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <!-- Brand Column -->
+      <div class="lg:col-span-1">
+        <a href="/" class="flex items-center gap-3 mb-6">
+          <Image src={logoImage} alt="Home Services Wizard" class="h-12 w-12" width={48} height={48} />
+          <div>
+            <span class="block font-bold text-lg">Home Services</span>
+            <span class="block font-bold text-lg text-secondary">Wizard</span>
+          </div>
+        </a>
+        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+          Arizona's trusted insurance partner for home service professionals. 
+          Protecting handymen, HVAC contractors, and more since 2024.
+        </p>
+        <div class="flex gap-4">
+          {socialLinks.map((link) => (
+            <a 
+              href={link.url} 
+              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors"
+              aria-label={link.label}
+            >
+              <Icon name={link.icon} class="w-5 h-5" />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Professions Column -->
+      <div>
+        <h4 class="font-bold text-lg mb-6">Insurance by Profession</h4>
+        <ul class="space-y-3">
+          {professionLinks.map((link) => (
+            <li>
+              <a 
+                href={link.url} 
+                class={`text-gray-400 hover:text-white transition-colors flex items-center gap-2 ${link.soon ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                {link.title}
+                {link.soon && <span class="text-xs bg-secondary/20 text-secondary px-2 py-0.5 rounded-full">Soon</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Resources Column -->
+      <div>
+        <h4 class="font-bold text-lg mb-6">Resources</h4>
+        <ul class="space-y-3">
+          {resourceLinks.map((link) => (
+            <li>
+              <a href={link.url} class="text-gray-400 hover:text-white transition-colors">
+                {link.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact Column -->
+      <div>
+        <h4 class="font-bold text-lg mb-6">Contact Us</h4>
+        <ul class="space-y-4">
+          <li>
+            <a href="tel:+16028889289" class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
+              <Icon name="mdi:phone" class="w-5 h-5 text-secondary" />
+              <span>(602) 888-9289</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@homeserviceswizard.com" class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
+              <Icon name="mdi:email" class="w-5 h-5 text-secondary" />
+              <span>info@homeserviceswizard.com</span>
+            </a>
+          </li>
+          <li class="flex items-start gap-3 text-gray-400">
+            <Icon name="mdi:map-marker" class="w-5 h-5 text-secondary mt-0.5" />
+            <span>Phoenix, Arizona<br />Serving All of AZ</span>
+          </li>
+        </ul>
+        <div class="mt-6 p-4 bg-white/5 rounded-xl">
+          <p class="text-sm text-gray-400">
+            <span class="text-green-400 font-medium">Licensed Insurance Agency</span><br />
+            Arizona Department of Insurance
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-  <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
-    {
-      links.map((link) => (
-        <li>
-          <a
-            class="flex size-16 items-center justify-center rounded-full border-2 border-current p-4"
-            href={link.url}
-          >
-            <span class="sr-only">{link.description}</span>
-            <Icon class="size-full" name={link.icon} />
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+      <p>© {currentYear} Home Services Wizard. All rights reserved.</p>
+      <p class="flex items-center gap-2">
+        <Icon name="mdi:map-marker" class="w-4 h-4" />
+        <span>Proudly serving Arizona home service professionals</span>
+      </p>
+    </div>
+  </div>
 </footer>

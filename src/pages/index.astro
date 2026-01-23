@@ -1,18 +1,91 @@
 ---
 import "@fontsource-variable/inter";
-import Compatibility from "~/components/compatibility.astro";
-import Features from "~/components/features.astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
-import Intro from "~/components/intro.astro";
-import Showcase from "~/components/showcase.astro";
-import Splash from "~/components/splash.astro";
+import logoImage from "~/assets/logo.png";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
 const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+  "Home Services Wizard - Your trusted partner for comprehensive insurance solutions tailored to home service professionals in Arizona. Get covered today!";
+
+interface ProfessionCard {
+  title: string;
+  description: string;
+  icon: string;
+  url: string;
+  available: boolean;
+}
+
+const professions: Array<ProfessionCard> = [
+  {
+    title: "Handyman Insurance",
+    description: "Complete coverage for handyman professionals in Arizona. Protect your business with General Liability, Workers' Comp, and more.",
+    icon: "mdi:hammer-wrench",
+    url: "/handyman",
+    available: true,
+  },
+  {
+    title: "HVAC Contractor Insurance",
+    description: "Specialized insurance for HVAC contractors in Arizona. Coverage for equipment, liability, and professional services.",
+    icon: "mdi:air-conditioner",
+    url: "/hvac",
+    available: true,
+  },
+  {
+    title: "Plumber Insurance",
+    description: "Comprehensive coverage for plumbing contractors in Arizona. Protect against water damage claims and more.",
+    icon: "mdi:pipe-wrench",
+    url: "/plumber",
+    available: true,
+  },
+  {
+    title: "Electrician Insurance",
+    description: "Professional liability and general coverage for Arizona electrical contractors.",
+    icon: "mdi:flash",
+    url: "/electrician",
+    available: true,
+  },
+  {
+    title: "Landscaping Insurance",
+    description: "Full coverage for Arizona landscaping and lawn care professionals.",
+    icon: "mdi:flower",
+    url: "/landscaping",
+    available: true,
+  },
+  {
+    title: "Roofing Insurance",
+    description: "Specialized insurance for Arizona roofing contractors dealing with extreme heat.",
+    icon: "mdi:home-roof",
+    url: "/roofing",
+    available: true,
+  },
+];
+
+const benefits = [
+  {
+    title: "Arizona Specialists",
+    description: "We understand the unique insurance needs of Arizona home service professionals. From the Phoenix heat to Tucson regulations.",
+    icon: "mdi:map-marker",
+  },
+  {
+    title: "Fast Online Quotes",
+    description: "Get your personalized insurance quote in minutes. No lengthy paperwork or waiting on hold.",
+    icon: "mdi:lightning-bolt",
+  },
+  {
+    title: "Comprehensive Coverage",
+    description: "From General Liability to Workers' Compensation, we offer all the coverage you need in one place.",
+    icon: "mdi:shield-check",
+  },
+  {
+    title: "Affordable Rates",
+    description: "We work with top-rated carriers to find you the best rates without sacrificing coverage quality.",
+    icon: "mdi:currency-usd",
+  },
+];
 ---
 
 <!doctype html>
@@ -23,15 +96,14 @@ const description =
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={generator} />
 
-    <title>Astro Landing Page</title>
+    <title>Home Services Wizard | Insurance for Home Service Professionals in Arizona</title>
     <meta name="description" content={description} />
 
     <!-- social media -->
-    <meta property="og:title" content="Astro" />
+    <meta property="og:title" content="Home Services Wizard - Insurance for Home Service Pros" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
+    <meta property="og:url" content="https://homeserviceswizard.com" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- initialize theme -->
@@ -62,13 +134,180 @@ const description =
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
     <Header />
-    <Splash />
-    <div class="space-y-24 px-8 py-32">
-      <Intro />
-      <Features />
-      <Compatibility />
-      <Showcase />
-    </div>
+    
+    <!-- Hero Section -->
+    <section class="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center overflow-hidden">
+      <!-- Animated background elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
+        <div class="flex justify-center mb-8">
+          <Image 
+            src={logoImage} 
+            alt="Home Services Wizard Logo" 
+            class="w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-2xl"
+            width={160}
+            height={160}
+          />
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight">
+          <span class="bg-gradient-to-r from-blue-400 via-blue-300 to-amber-400 bg-clip-text text-transparent">
+            Insurance Made Simple
+          </span>
+          <br />
+          <span class="text-white">for Home Service Pros</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-blue-100/80 max-w-3xl mx-auto mb-10 leading-relaxed">
+          Protect your Arizona home services business with comprehensive insurance coverage. 
+          Fast quotes, affordable rates, and expert support.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a 
+            href="#professions" 
+            class="group px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold rounded-xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-105 transition-all duration-300 flex items-center gap-3"
+          >
+            <Icon name="mdi:shield-check" class="w-6 h-6" />
+            <span>Get Your Free Quote</span>
+            <Icon name="mdi:arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a 
+            href="tel:+16028889289" 
+            class="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300 flex items-center gap-3"
+          >
+            <Icon name="mdi:phone" class="w-5 h-5" />
+            <span>Call (602) 888-9289</span>
+          </a>
+        </div>
+        
+        <div class="mt-12 flex flex-wrap justify-center gap-8 text-blue-200/60 text-sm">
+          <div class="flex items-center gap-2">
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-green-400" />
+            <span>Licensed in Arizona</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-green-400" />
+            <span>A+ Rated Carriers</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-green-400" />
+            <span>Same-Day Coverage</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <Icon name="mdi:chevron-down" class="w-8 h-8 text-white/50" />
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 px-8 bg-default">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-4">
+            Why Choose <span class="text-primary">Home Services Wizard?</span>
+          </h2>
+          <p class="text-xl text-offset max-w-2xl mx-auto">
+            We specialize in protecting Arizona's home service professionals with tailored insurance solutions.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {benefits.map((benefit) => (
+            <div class="group p-8 bg-offset rounded-2xl border border-default hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Icon name={benefit.icon} class="w-7 h-7 text-white" />
+              </div>
+              <h3 class="text-xl font-bold mb-3">{benefit.title}</h3>
+              <p class="text-offset text-sm leading-relaxed">{benefit.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Professions Section -->
+    <section id="professions" class="py-24 px-8 bg-offset">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-4">
+            Insurance by <span class="text-primary">Profession</span>
+          </h2>
+          <p class="text-xl text-offset max-w-2xl mx-auto">
+            Select your profession to get a customized insurance quote tailored to your specific needs.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {professions.map((profession) => (
+            <a 
+              href={profession.available ? profession.url : "#"}
+              class={`group relative p-8 rounded-2xl border transition-all duration-300 ${
+                profession.available 
+                  ? "bg-default border-default hover:border-primary hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 cursor-pointer" 
+                  : "bg-default/50 border-default/50 opacity-60 cursor-not-allowed"
+              }`}
+            >
+              {!profession.available && (
+                <div class="absolute top-4 right-4 px-3 py-1 bg-secondary/20 text-secondary text-xs font-bold rounded-full">
+                  Coming Soon
+                </div>
+              )}
+              <div class={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
+                profession.available 
+                  ? "bg-gradient-to-br from-primary to-primary/70 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/30" 
+                  : "bg-gray-600/50"
+              }`}>
+                <Icon name={profession.icon} class="w-8 h-8 text-white" />
+              </div>
+              <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
+                {profession.title}
+                {profession.available && (
+                  <Icon name="mdi:arrow-right" class="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
+                )}
+              </h3>
+              <p class="text-offset text-sm leading-relaxed">{profession.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-8 bg-gradient-to-r from-primary to-blue-700">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+          Ready to Protect Your Business?
+        </h2>
+        <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+          Join thousands of Arizona home service professionals who trust Home Services Wizard for their insurance needs.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="#professions" 
+            class="px-8 py-4 bg-white text-primary font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+          >
+            Get Started Today
+          </a>
+          <a 
+            href="tel:+16028889289" 
+            class="px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2"
+          >
+            <Icon name="mdi:phone" class="w-5 h-5" />
+            Speak with an Expert
+          </a>
+        </div>
+      </div>
+    </section>
+
     <Footer />
   </body>
 </html>

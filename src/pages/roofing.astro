@@ -1,0 +1,527 @@
+---
+import "@fontsource-variable/inter";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Footer from "~/components/footer.astro";
+import Header from "~/components/header.astro";
+import logoImage from "~/assets/logo.png";
+import handymanHero from "~/assets/handyman-hero.png";
+import "~/styles/index.css";
+
+const { generator } = Astro;
+const description =
+  "Get comprehensive Roofing Contractor Insurance in Arizona. Specialized coverage for roofers including liability, workers' comp, and fall protection. Fast quotes!";
+
+const coverageTypes = [
+  {
+    title: "General Liability Insurance",
+    description: "Essential protection for roofers against third-party claims for property damage, water intrusion, and bodily injury from roofing work.",
+    icon: "mdi:shield-home",
+    details: ["Property damage up to $2M", "Water intrusion coverage", "Bodily injury coverage", "Completed operations"],
+  },
+  {
+    title: "Workers' Compensation",
+    description: "Critical coverage for Arizona roofing contractors. Protects against falls, heat-related illness, and work injuries at elevated heights.",
+    icon: "mdi:account-injury",
+    details: ["Fall injuries", "Heat exhaustion/stroke", "Equipment injuries", "Rehabilitation costs"],
+  },
+  {
+    title: "Commercial Auto Insurance",
+    description: "Protect your roofing trucks, material trailers, and equipment in transit throughout Arizona.",
+    icon: "mdi:truck",
+    details: ["Truck & trailer coverage", "Materials in transit", "Liability protection", "Roadside assistance"],
+  },
+  {
+    title: "Equipment & Tools Coverage",
+    description: "Specialized coverage for expensive roofing equipment including nail guns, compressors, and safety gear.",
+    icon: "mdi:hammer",
+    details: ["Nail guns & compressors", "Safety equipment", "Ladders & scaffolding", "Power tools"],
+  },
+  {
+    title: "Professional Liability (E&O)",
+    description: "Covers claims arising from faulty installations, design errors, or roof failures after completion.",
+    icon: "mdi:certificate",
+    details: ["Installation errors", "Leak claims", "Material failures", "Legal defense"],
+  },
+  {
+    title: "Builders Risk Insurance",
+    description: "Protection for materials and work in progress on active roofing projects throughout Arizona.",
+    icon: "mdi:home-roof",
+    details: ["Materials on site", "Work in progress", "Storm damage", "Theft protection"],
+  },
+];
+
+const benefits = [
+  { icon: "mdi:clock-fast", text: "Quotes in minutes" },
+  { icon: "mdi:certificate", text: "COI same day" },
+  { icon: "mdi:cash-multiple", text: "Flexible payments" },
+  { icon: "mdi:home-roof", text: "Roofing specialists" },
+];
+
+const faqs = [
+  {
+    question: "Is roofing contractor insurance required in Arizona?",
+    answer: "Yes. Arizona requires roofing contractors to hold an ROC (Registrar of Contractors) license, which mandates general liability insurance. Workers' compensation is also required if you have employees. Given the high-risk nature of roofing, adequate coverage is essential.",
+  },
+  {
+    question: "How much does roofing contractor insurance cost in Arizona?",
+    answer: "Roofing contractor insurance in Arizona typically costs $2,500-$8,000 annually for general liability due to the high-risk nature of the work. Workers' comp rates are also higher for roofing. Get a personalized quote for exact pricing.",
+  },
+  {
+    question: "Why is roofing insurance more expensive than other trades?",
+    answer: "Roofing is classified as a high-risk trade due to working at heights, weather exposure, and the critical nature of roof failures. Insurance companies charge higher premiums to account for these increased risks.",
+  },
+  {
+    question: "Does my insurance cover leaks after I complete a job?",
+    answer: "Yes, 'completed operations' coverage within your general liability policy protects against claims from work you've finished, including leaks discovered after job completion.",
+  },
+  {
+    question: "What about heat-related injuries for my crew?",
+    answer: "Workers' compensation covers heat exhaustion, heat stroke, and other heat-related injuries. This is especially important in Arizona where roof surface temperatures can exceed 160°F in summer.",
+  },
+];
+
+const arizonaCities = [
+  "Phoenix", "Tucson", "Mesa", "Chandler", "Scottsdale", "Glendale", 
+  "Gilbert", "Tempe", "Peoria", "Surprise", "Yuma", "Flagstaff"
+];
+
+const roofingServices = [
+  "Tile Roofing",
+  "Shingle Roofing",
+  "Flat Roofing",
+  "Roof Repairs",
+  "Roof Inspections",
+  "Commercial Roofing",
+  "Foam Roofing",
+  "Emergency Service"
+];
+---
+
+<!doctype html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="generator" content={generator} />
+
+    <title>Roofing Contractor Insurance Arizona | Get a Free Quote | Home Services Wizard</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="roofing contractor insurance Arizona, roofer insurance Phoenix, roofing liability insurance, Arizona roofer coverage, tile roof insurance" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Roofing Contractor Insurance Arizona - Fast Quotes, Great Rates" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://homeserviceswizard.com/roofing" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "InsuranceAgency",
+        "name": "Home Services Wizard - Roofing Contractor Insurance",
+        "description": "Roofing contractor insurance provider specializing in Arizona roofers",
+        "areaServed": "Arizona",
+        "url": "https://homeserviceswizard.com/roofing"
+      }
+    </script>
+
+    <script is:inline>
+      const themeSaved = localStorage.getItem("theme");
+      if (themeSaved) {
+        document.documentElement.dataset.theme = themeSaved;
+      } else {
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      }
+    </script>
+  </head>
+  <body class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white">
+    <Header />
+    
+    <!-- Hero Section -->
+    <section class="relative min-h-screen bg-gradient-to-br from-slate-900 via-orange-900/20 to-slate-900 flex items-center overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 right-10 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-20 left-10 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+      </div>
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <Image src={logoImage} alt="Home Services Wizard" class="w-12 h-12" width={48} height={48} />
+            <span class="text-orange-400 font-semibold">Home Services Wizard</span>
+          </div>
+          
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 rounded-full text-orange-400 text-sm font-medium mb-6">
+            <Icon name="mdi:home-roof" class="w-4 h-4" />
+            Arizona Roofing Specialists
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+            <span class="text-orange-400">Roofing</span>
+            <br />
+            <span class="text-amber-400">Insurance</span>
+            <br />
+            Built for Arizona Pros
+          </h1>
+          
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Protect your roofing business with comprehensive coverage tailored for 
+            Arizona's extreme conditions. Get insured in minutes and focus on what you do best.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 mb-8">
+            {benefits.map((benefit) => (
+              <div class="flex items-center gap-2 text-gray-300 text-sm">
+                <Icon name={benefit.icon} class="w-5 h-5 text-green-400" />
+                <span>{benefit.text}</span>
+              </div>
+            ))}
+          </div>
+
+          <!-- Lead Capture Form -->
+          <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+            <h3 class="text-xl font-bold text-white mb-4">Get Your Free Quote</h3>
+            <form id="quote-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm text-gray-300 mb-1">Full Name *</label>
+                  <input 
+                    type="text" 
+                    name="fullName"
+                    required
+                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition"
+                    placeholder="John Smith"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm text-gray-300 mb-1">Phone Number *</label>
+                  <input 
+                    type="tel" 
+                    name="phone"
+                    required
+                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition"
+                    placeholder="(602) 888-9289"
+                  />
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm text-gray-300 mb-1">Email Address *</label>
+                <input 
+                  type="email" 
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition"
+                  placeholder="john@example.com"
+                />
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm text-gray-300 mb-1">Business Name</label>
+                  <input 
+                    type="text" 
+                    name="businessName"
+                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-orange-400 transition"
+                    placeholder="Smith Roofing LLC"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm text-gray-300 mb-1">Arizona City *</label>
+                  <select 
+                    name="city"
+                    required
+                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:border-orange-400 transition"
+                  >
+                    <option value="" class="bg-gray-900">Select your city</option>
+                    {arizonaCities.map((city) => (
+                      <option value={city} class="bg-gray-900">{city}</option>
+                    ))}
+                    <option value="other" class="bg-gray-900">Other Arizona City</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm text-gray-300 mb-1">Annual Revenue</label>
+                <select 
+                  name="revenue"
+                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:border-orange-400 transition"
+                >
+                  <option value="" class="bg-gray-900">Select range</option>
+                  <option value="0-100k" class="bg-gray-900">Under $100,000</option>
+                  <option value="100k-250k" class="bg-gray-900">$100,000 - $250,000</option>
+                  <option value="250k-500k" class="bg-gray-900">$250,000 - $500,000</option>
+                  <option value="500k-1m" class="bg-gray-900">$500,000 - $1,000,000</option>
+                  <option value="1m+" class="bg-gray-900">$1,000,000+</option>
+                </select>
+              </div>
+              <button 
+                type="submit"
+                class="w-full py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-lg shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <Icon name="mdi:shield-check" class="w-5 h-5" />
+                Get My Free Quote
+              </button>
+              <p class="text-xs text-gray-400 text-center">
+                No obligation. Your information is secure and never shared.
+              </p>
+            </form>
+          </div>
+        </div>
+        
+        <div class="hidden lg:block relative">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10 rounded-3xl"></div>
+          <Image 
+            src={handymanHero} 
+            alt="Professional Roofer in Arizona" 
+            class="rounded-3xl shadow-2xl shadow-orange-500/20"
+            width={600}
+            height={600}
+          />
+          <div class="absolute bottom-8 left-8 right-8 z-20">
+            <div class="bg-white/10 backdrop-blur-lg rounded-xl p-4 border border-white/20">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                  <Icon name="mdi:check" class="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p class="text-white font-semibold">Coverage Starting At</p>
+                  <p class="text-2xl font-bold text-orange-400">$89/month</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script is:inline>
+      const form = document.getElementById('quote-form');
+      form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        data.services = formData.getAll('services');
+        const button = form.querySelector('button[type="submit"]');
+        const originalText = button.innerHTML;
+        
+        button.disabled = true;
+        button.innerHTML = 'Sending...';
+        
+        try {
+          const response = await fetch('/api/submit-quote', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          });
+          
+          if (response.ok) {
+            button.innerHTML = 'Quote Requested!';
+            button.classList.remove('bg-gradient-to-r', 'from-orange-500', 'to-red-500');
+            button.classList.add('bg-green-600');
+            form.reset();
+            setTimeout(() => {
+              button.disabled = false;
+              button.innerHTML = originalText;
+              button.classList.add('bg-gradient-to-r', 'from-orange-500', 'to-red-500');
+              button.classList.remove('bg-green-600');
+            }, 5000);
+          } else {
+            throw new Error('Failed to send');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          button.innerHTML = 'Error. Please Try Again.';
+          button.classList.add('bg-red-600');
+          setTimeout(() => {
+            button.disabled = false;
+            button.innerHTML = originalText;
+            button.classList.remove('bg-red-600');
+          }, 3000);
+        }
+      });
+    </script>
+
+    <!-- Why Roofing Insurance Matters in Arizona -->
+    <section class="py-24 px-8 bg-offset">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6">
+              Why Arizona Roofers <span class="text-primary">Need Specialized Coverage</span>
+            </h2>
+            <p class="text-lg text-offset mb-6 leading-relaxed">
+              Arizona's extreme heat and monsoon storms create unique challenges for roofers. 
+              From tile roofs baking in 160°F surface temperatures to emergency repairs 
+              after haboobs, you need insurance that understands the Arizona roofing industry.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4 p-4 bg-default rounded-xl border border-default">
+                <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
+                  <Icon name="mdi:thermometer-high" class="w-5 h-5 text-red-500" />
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Extreme Heat Exposure</h4>
+                  <p class="text-sm text-offset">Roof surfaces exceed 160°F in summer. Heat-related injuries are a real risk.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 bg-default rounded-xl border border-default">
+                <div class="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
+                  <Icon name="mdi:ladder" class="w-5 h-5 text-orange-500" />
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Fall Risk Coverage</h4>
+                  <p class="text-sm text-offset">Roofing has the highest fall risk of any trade. Proper coverage is essential.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 p-4 bg-default rounded-xl border border-default">
+                <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
+                  <Icon name="mdi:weather-lightning-rainy" class="w-5 h-5 text-blue-500" />
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Monsoon Season</h4>
+                  <p class="text-sm text-offset">Summer storms create emergency demand and increased liability exposure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-6 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-2xl border border-orange-500/20">
+              <div class="text-4xl font-extrabold text-orange-400 mb-2">160°F</div>
+              <p class="text-sm text-offset">roof surface temperatures</p>
+            </div>
+            <div class="p-6 bg-gradient-to-br from-red-500/20 to-red-600/20 rounded-2xl border border-red-500/20">
+              <div class="text-4xl font-extrabold text-red-400 mb-2">#1</div>
+              <p class="text-sm text-offset">trade for fall injuries</p>
+            </div>
+            <div class="p-6 bg-gradient-to-br from-amber-500/20 to-amber-600/20 rounded-2xl border border-amber-500/20">
+              <div class="text-4xl font-extrabold text-amber-400 mb-2">3,500+</div>
+              <p class="text-sm text-offset">roofing contractors in AZ</p>
+            </div>
+            <div class="p-6 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-2xl border border-blue-500/20">
+              <div class="text-4xl font-extrabold text-blue-400 mb-2">50+</div>
+              <p class="text-sm text-offset">monsoon storms per year</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage Types Section -->
+    <section id="coverage" class="py-24 px-8 bg-default">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-4">
+            Complete <span class="text-primary">Roofing Coverage</span>
+          </h2>
+          <p class="text-xl text-offset max-w-2xl mx-auto">
+            Comprehensive protection designed specifically for Arizona roofing contractors and their high-risk work.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {coverageTypes.map((coverage) => (
+            <div class="group p-6 bg-offset rounded-2xl border border-default hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                <Icon name={coverage.icon} class="w-7 h-7 text-white" />
+              </div>
+              <h3 class="text-xl font-bold mb-3">{coverage.title}</h3>
+              <p class="text-offset text-sm mb-4">{coverage.description}</p>
+              <ul class="space-y-2">
+                {coverage.details.map((detail) => (
+                  <li class="flex items-center gap-2 text-sm">
+                    <Icon name="mdi:check-circle" class="w-4 h-4 text-green-500 flex-shrink-0" />
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Arizona Locations Section -->
+    <section class="py-24 px-8 bg-offset">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+            Serving Roofers <span class="text-primary">Across Arizona</span>
+          </h2>
+          <p class="text-lg text-offset max-w-2xl mx-auto">
+            From Phoenix to Flagstaff, we provide coverage wherever you work in Arizona.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {arizonaCities.map((city) => (
+            <div class="flex items-center justify-center gap-2 p-4 bg-default rounded-xl border border-default hover:border-primary/50 transition-all">
+              <Icon name="mdi:map-marker" class="w-4 h-4 text-orange-500" />
+              <span class="font-medium">{city}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 px-8 bg-default">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-4">
+            Roofing Insurance <span class="text-primary">FAQ</span>
+          </h2>
+        </div>
+        
+        <div class="space-y-4">
+          {faqs.map((faq) => (
+            <details class="group bg-offset rounded-xl border border-default overflow-hidden">
+              <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-primary/5 transition-colors">
+                <h3 class="font-semibold text-lg pr-4">{faq.question}</h3>
+                <Icon name="mdi:chevron-down" class="w-6 h-6 text-primary transition-transform group-open:rotate-180 flex-shrink-0" />
+              </summary>
+              <div class="px-6 pb-6 text-offset">
+                <p>{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-8 bg-gradient-to-r from-orange-600 to-red-600">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+          Protect Your Roofing Business Today
+        </h2>
+        <p class="text-xl text-orange-100 mb-10 max-w-2xl mx-auto">
+          Don't let one fall or leak claim put your business at risk. Get comprehensive roofing insurance and keep Arizona covered.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="#quote-form" 
+            class="px-8 py-4 bg-white text-orange-600 font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+            onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'}); return false;"
+          >
+            Get Your Free Quote Now
+          </a>
+          <a 
+            href="tel:+16028889289" 
+            class="px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2"
+          >
+            <Icon name="mdi:phone" class="w-5 h-5" />
+            (602) 888-9289
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </body>
+</html>

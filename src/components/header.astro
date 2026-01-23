@@ -1,43 +1,61 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
+import logoImage from "~/assets/logo.png";
 import type { NavItem } from "~/types";
 
 const navItems: Array<NavItem> = [
-  { title: "Features", url: "#features" },
-  { title: "Compatibility", url: "#compatibility" },
-  { title: "Showcase", url: "#showcase" },
+  { title: "Home", url: "/" },
+  { title: "Handyman", url: "/handyman" },
+  { title: "HVAC", url: "/hvac" },
+  { title: "Plumber", url: "/plumber" },
+  { title: "Electrician", url: "/electrician" },
+  { title: "Landscaping", url: "/landscaping" },
+  { title: "Roofing", url: "/roofing" },
 ];
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="absolute top-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <h1 class="sr-only">Astro</h1>
-    <Icon name="logomark" class="size-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+  <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="/">
+    <h1 class="sr-only">Home Services Wizard</h1>
+    <Image src={logoImage} alt="Home Services Wizard" class="h-10 w-10 object-contain" width={40} height={40} />
+    <span class="hidden sm:block font-bold text-lg">
+      <span class="logo-text">Home Services</span>
+      <span class="text-secondary"> Wizard</span>
+    </span>
   </a>
   <div>
     <div class="flex items-center gap-6">
-      <nav class="hidden sm:block">
+      <nav class="hidden md:block">
         <ul class="flex items-center gap-6">
           {
             navItems.map(({ title, url }) => (
               <li>
-                <a class="text-sm" href={url}>
+                <a class="text-sm font-medium hover:text-secondary transition-colors" href={url}>
                   {title}
                 </a>
               </li>
             ))
           }
+          <li>
+            <a 
+              href="tel:+16028889289" 
+              class="flex items-center gap-2 px-4 py-2 bg-secondary text-white rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+            >
+              <Icon name="mdi:phone" class="w-4 h-4" />
+              <span>(602) 888-9289</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <button
         id="open-nav-button"
         type="button"
-        class="btn sm:hidden"
+        class="btn md:hidden"
         aria-label="Navigation"
       >
         <Icon name="mdi:menu" class="size-8" />
@@ -58,19 +76,28 @@ const navItems: Array<NavItem> = [
             </button>
           </header>
           <div class="flex justify-center">
-            <Icon name="logomark" class="size-16" />
+            <Image src={logoImage} alt="Home Services Wizard" class="h-16 w-16" width={64} height={64} />
           </div>
           <nav>
             <ul class="flex flex-col">
               {
                 navItems.map(({ title, url }) => (
                   <li>
-                    <a class="block py-4 text-center text-xl" href={url}>
+                    <a class="block py-4 text-center text-xl font-medium" href={url}>
                       {title}
                     </a>
                   </li>
                 ))
               }
+              <li class="pt-4">
+                <a 
+                  href="tel:+16028889289" 
+                  class="flex items-center justify-center gap-2 px-6 py-4 bg-secondary text-white rounded-lg font-bold"
+                >
+                  <Icon name="mdi:phone" class="w-5 h-5" />
+                  <span>Call (602) 888-9289</span>
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -108,8 +135,7 @@ const navItems: Array<NavItem> = [
   closeNavButton.addEventListener("click", closeMenu);
 
   document.addEventListener("scroll", () => {
-    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
-    header.classList.toggle("fixed-header", d < 0);
+    header.classList.toggle("fixed-header", page.scrollTop > 100);
   });
 
   menu.addEventListener("click", (event) => {
@@ -128,9 +154,15 @@ const navItems: Array<NavItem> = [
 </noscript>
 
 <style>
+  .logo-text {
+    @apply text-white;
+  }
   .fixed-header {
     @apply fixed bottom-auto top-0;
     @apply border-default bg-default text-default;
+  }
+  .fixed-header .logo-text {
+    @apply text-primary;
   }
   .modal.is-open {
     @apply block;
