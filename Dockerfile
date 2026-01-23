@@ -1,23 +1,17 @@
 FROM node:lts-slim AS base
 WORKDIR /app
 
-# Copy package.json only to avoid potential Windows/Linux lockfile conflicts
+# Copy package.json
 COPY package.json ./
 
-FROM base AS prod-deps
-RUN npm install --omit=dev --legacy-peer-deps
-
-FROM base AS build-deps
+FROM base AS build
 RUN npm install --legacy-peer-deps
-
-FROM build-deps AS build
 COPY . .
 RUN npm run build
 
 FROM base AS runtime
-# Copy package.json for "type": "module" resolution
-COPY package.json ./
-COPY --from=prod-deps /app/node_modules ./node_modules
+# Copy full node_modules from build (includes all deps needed by Astro at runtime)
+COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 
 ENV HOST=0.0.0.0
