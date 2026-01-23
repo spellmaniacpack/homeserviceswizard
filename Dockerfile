@@ -15,6 +15,8 @@ COPY . .
 RUN npm run build
 
 FROM base AS runtime
+# Copy package.json for "type": "module" resolution
+COPY package.json ./
 COPY --from=prod-deps /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 
