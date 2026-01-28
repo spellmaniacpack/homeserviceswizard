@@ -15,39 +15,75 @@ const description =
 const coverageTypes = [
   {
     title: "General Liability Insurance",
-    description: "Essential protection for electricians against third-party claims for property damage, fire damage, and bodily injury from electrical work.",
+    description:
+      "Essential protection for electricians against third-party claims for property damage, fire damage, and bodily injury from electrical work.",
     icon: "mdi:shield-home",
-    details: ["Fire damage coverage", "Property damage up to $2M", "Bodily injury coverage", "Completed operations"],
+    details: [
+      "Fire damage coverage",
+      "Property damage up to $2M",
+      "Bodily injury coverage",
+      "Completed operations",
+    ],
   },
   {
     title: "Workers' Compensation",
-    description: "Required coverage for Arizona electrical contractors with employees. Protects against electrical shocks, falls, and work-related injuries.",
+    description:
+      "Required coverage for Arizona electrical contractors with employees. Protects against electrical shocks, falls, and work-related injuries.",
     icon: "mdi:account-injury",
-    details: ["Electrical shock injuries", "Fall protection", "Burns coverage", "Rehabilitation costs"],
+    details: [
+      "Electrical shock injuries",
+      "Fall protection",
+      "Burns coverage",
+      "Rehabilitation costs",
+    ],
   },
   {
     title: "Commercial Auto Insurance",
-    description: "Protect your electrical service vehicles, equipment trailers, and tools in transit throughout Arizona.",
+    description:
+      "Protect your electrical service vehicles, equipment trailers, and tools in transit throughout Arizona.",
     icon: "mdi:truck",
-    details: ["Service van coverage", "Equipment in transit", "Liability protection", "Roadside assistance"],
+    details: [
+      "Service van coverage",
+      "Equipment in transit",
+      "Liability protection",
+      "Roadside assistance",
+    ],
   },
   {
     title: "Professional Liability (E&O)",
-    description: "Covers claims arising from faulty wiring, code violations, or electrical failures after installation.",
+    description:
+      "Covers claims arising from faulty wiring, code violations, or electrical failures after installation.",
     icon: "mdi:certificate",
-    details: ["Design errors", "Code violations", "System failures", "Legal defense"],
+    details: [
+      "Design errors",
+      "Code violations",
+      "System failures",
+      "Legal defense",
+    ],
   },
   {
     title: "Tools & Equipment Coverage",
-    description: "Specialized coverage for expensive electrical testing equipment, meters, and specialized tools.",
+    description:
+      "Specialized coverage for expensive electrical testing equipment, meters, and specialized tools.",
     icon: "mdi:flash",
-    details: ["Multimeters", "Wire pullers", "Testing equipment", "Power tools"],
+    details: [
+      "Multimeters",
+      "Wire pullers",
+      "Testing equipment",
+      "Power tools",
+    ],
   },
   {
     title: "Contractor's Pollution Liability",
-    description: "Coverage for environmental hazards including old wiring removal, transformer work, and hazardous material exposure.",
+    description:
+      "Coverage for environmental hazards including old wiring removal, transformer work, and hazardous material exposure.",
     icon: "mdi:leaf",
-    details: ["Hazmat exposure", "Old wire removal", "Clean-up costs", "Third-party claims"],
+    details: [
+      "Hazmat exposure",
+      "Old wire removal",
+      "Clean-up costs",
+      "Third-party claims",
+    ],
   },
 ];
 
@@ -61,29 +97,44 @@ const benefits = [
 const faqs = [
   {
     question: "Is electrician insurance required in Arizona?",
-    answer: "Yes. Arizona requires electrical contractors to hold an ROC (Registrar of Contractors) license, which mandates general liability insurance. Additionally, workers' compensation is required if you have employees. Most commercial clients and general contractors also require proof of insurance.",
+    answer:
+      "Yes. Arizona requires electrical contractors to hold an ROC (Registrar of Contractors) license, which mandates general liability insurance. Additionally, workers' compensation is required if you have employees. Most commercial clients and general contractors also require proof of insurance.",
   },
   {
     question: "How much does electrician insurance cost in Arizona?",
-    answer: "Electrician insurance in Arizona typically costs $1,500-$5,000 annually for general liability, depending on your revenue, number of employees, and coverage limits. Higher-risk work like commercial or industrial electrical may cost more.",
+    answer:
+      "Electrician insurance in Arizona typically costs $1,500-$5,000 annually for general liability, depending on your revenue, number of employees, and coverage limits. Higher-risk work like commercial or industrial electrical may cost more.",
   },
   {
     question: "Does electrician insurance cover fire damage I cause?",
-    answer: "Yes, your general liability insurance covers fire damage caused by faulty electrical work. This is one of the most serious risks for electricians, making adequate coverage essential.",
+    answer:
+      "Yes, your general liability insurance covers fire damage caused by faulty electrical work. This is one of the most serious risks for electricians, making adequate coverage essential.",
   },
   {
     question: "What about electric shock injuries to my employees?",
-    answer: "Workers' compensation insurance covers medical expenses, lost wages, and rehabilitation for employees injured on the job, including electrical shock injuries.",
+    answer:
+      "Workers' compensation insurance covers medical expenses, lost wages, and rehabilitation for employees injured on the job, including electrical shock injuries.",
   },
   {
     question: "Do I need special insurance for solar panel installation?",
-    answer: "Solar installation may require additional coverage due to the specialized nature of the work and roof access. We can help you find the right coverage for solar and renewable energy work.",
+    answer:
+      "Solar installation may require additional coverage due to the specialized nature of the work and roof access. We can help you find the right coverage for solar and renewable energy work.",
   },
 ];
 
 const arizonaCities = [
-  "Phoenix", "Tucson", "Mesa", "Chandler", "Scottsdale", "Glendale", 
-  "Gilbert", "Tempe", "Peoria", "Surprise", "Yuma", "Flagstaff"
+  "Phoenix",
+  "Tucson",
+  "Mesa",
+  "Chandler",
+  "Scottsdale",
+  "Glendale",
+  "Gilbert",
+  "Tempe",
+  "Peoria",
+  "Surprise",
+  "Yuma",
+  "Flagstaff",
 ];
 
 const electricalServices = [
@@ -94,7 +145,7 @@ const electricalServices = [
   "EV Charger Install",
   "Lighting Systems",
   "Emergency Service",
-  "Industrial Electric"
+  "Industrial Electric",
 ];
 ---
 
@@ -106,15 +157,30 @@ const electricalServices = [
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={generator} />
 
-    <title>Electrician Insurance Arizona | Get a Free Quote | Home Services Wizard</title>
+    <title>
+      Electrician Insurance Arizona | Get a Free Quote | Home Services Wizard
+    </title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="electrician insurance Arizona, electrical contractor insurance Phoenix, electrician liability insurance, Arizona electrician coverage" />
+    <link
+      rel="canonical"
+      href="https://www.homeserviceswizard.com/electrician"
+    />
+    <meta
+      name="keywords"
+      content="electrician insurance Arizona, electrical contractor insurance Phoenix, electrician liability insurance, Arizona electrician coverage"
+    />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Electrician Insurance Arizona - Fast Quotes, Great Rates" />
+    <meta
+      property="og:title"
+      content="Electrician Insurance Arizona - Fast Quotes, Great Rates"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://homeserviceswizard.com/electrician" />
+    <meta
+      property="og:url"
+      content="https://www.homeserviceswizard.com/electrician"
+    />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Local Business Schema -->
@@ -125,7 +191,7 @@ const electricalServices = [
         "name": "Home Services Wizard - Electrician Insurance",
         "description": "Electrician insurance provider specializing in Arizona electrical contractors",
         "areaServed": "Arizona",
-        "url": "https://homeserviceswizard.com/electrician"
+        "url": "https://www.homeserviceswizard.com/electrician"
       }
     </script>
 
@@ -134,162 +200,231 @@ const electricalServices = [
       if (themeSaved) {
         document.documentElement.dataset.theme = themeSaved;
       } else {
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
         document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
       }
     </script>
   </head>
-  <body class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white">
+  <body
+    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >
     <Header />
-    
+
     <!-- Hero Section -->
-    <section class="relative min-h-screen bg-gradient-to-br from-slate-900 via-yellow-900/20 to-slate-900 flex items-center overflow-hidden">
+    <section
+      class="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-br from-slate-900 via-yellow-900/20 to-slate-900"
+    >
       <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-20 right-10 w-72 h-72 bg-yellow-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute bottom-20 left-10 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        <div
+          class="absolute right-10 top-20 h-72 w-72 animate-pulse rounded-full bg-yellow-500/20 blur-3xl"
+        >
+        </div>
+        <div
+          class="absolute bottom-20 left-10 h-96 w-96 animate-pulse rounded-full bg-amber-500/10 blur-3xl"
+          style="animation-delay: 1s;"
+        >
+        </div>
       </div>
-      
-      <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+
+      <div
+        class="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2"
+      >
         <div>
-          <div class="flex items-center gap-3 mb-6">
-            <Image src={logoImage} alt="Home Services Wizard" class="w-12 h-12" width={48} height={48} />
-            <span class="text-yellow-400 font-semibold">Home Services Wizard</span>
+          <div class="mb-6 flex items-center gap-3">
+            <Image
+              src={logoImage}
+              alt="Home Services Wizard"
+              class="h-12 w-12"
+              width={48}
+              height={48}
+            />
+            <span class="font-semibold text-yellow-400"
+              >Home Services Wizard</span
+            >
           </div>
-          
-          <div class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/20 rounded-full text-yellow-400 text-sm font-medium mb-6">
-            <Icon name="mdi:flash" class="w-4 h-4" />
+
+          <div
+            class="mb-6 inline-flex items-center gap-2 rounded-full bg-yellow-500/20 px-4 py-2 font-medium text-yellow-400 text-sm"
+          >
+            <Icon name="mdi:flash" class="h-4 w-4" />
             Arizona Electrical Specialists
           </div>
-          
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+
+          <h1
+            class="mb-6 font-extrabold leading-tight text-white text-4xl md:text-5xl lg:text-6xl"
+          >
             <span class="text-yellow-400">Electrician</span>
             <br />
             <span class="text-amber-400">Insurance</span>
             <br />
             Built for Arizona Pros
           </h1>
-          
-          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-            Protect your electrical business with comprehensive coverage tailored for 
-            Arizona. Get insured in minutes and focus on what you do best.
+
+          <p class="mb-8 leading-relaxed text-gray-300 text-xl">
+            Protect your electrical business with comprehensive coverage
+            tailored for Arizona. Get insured in minutes and focus on what you
+            do best.
           </p>
-          
-          <div class="flex flex-wrap gap-4 mb-8">
-            {benefits.map((benefit) => (
-              <div class="flex items-center gap-2 text-gray-300 text-sm">
-                <Icon name={benefit.icon} class="w-5 h-5 text-green-400" />
-                <span>{benefit.text}</span>
-              </div>
-            ))}
+
+          <div class="mb-8 flex flex-wrap gap-4">
+            {
+              benefits.map((benefit) => (
+                <div class="flex items-center gap-2 text-gray-300 text-sm">
+                  <Icon name={benefit.icon} class="h-5 w-5 text-green-400" />
+                  <span>{benefit.text}</span>
+                </div>
+              ))
+            }
           </div>
 
           <!-- Lead Capture Form -->
-          <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-            <h3 class="text-xl font-bold text-white mb-4">Get Your Free Quote</h3>
+          <div
+            class="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-lg"
+          >
+            <h3 class="mb-4 font-bold text-white text-xl">
+              Get Your Free Quote
+            </h3>
             <form id="quote-form" class="space-y-4">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label class="block text-sm text-gray-300 mb-1">Full Name *</label>
-                  <input 
-                    type="text" 
+                  <label class="mb-1 block text-gray-300 text-sm"
+                    >Full Name *</label
+                  >
+                  <input
+                    type="text"
                     name="fullName"
                     required
-                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
+                    class="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-gray-400 transition focus:border-yellow-400 focus:outline-none"
                     placeholder="John Smith"
                   />
                 </div>
                 <div>
-                  <label class="block text-sm text-gray-300 mb-1">Phone Number *</label>
-                  <input 
-                    type="tel" 
+                  <label class="mb-1 block text-gray-300 text-sm"
+                    >Phone Number *</label
+                  >
+                  <input
+                    type="tel"
                     name="phone"
                     required
-                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
+                    class="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-gray-400 transition focus:border-yellow-400 focus:outline-none"
                     placeholder="(602) 888-9289"
                   />
                 </div>
               </div>
               <div>
-                <label class="block text-sm text-gray-300 mb-1">Email Address *</label>
-                <input 
-                  type="email" 
+                <label class="mb-1 block text-gray-300 text-sm"
+                  >Email Address *</label
+                >
+                <input
+                  type="email"
                   name="email"
                   required
-                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
+                  class="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-gray-400 transition focus:border-yellow-400 focus:outline-none"
                   placeholder="john@example.com"
                 />
               </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label class="block text-sm text-gray-300 mb-1">Business Name</label>
-                  <input 
-                    type="text" 
+                  <label class="mb-1 block text-gray-300 text-sm"
+                    >Business Name</label
+                  >
+                  <input
+                    type="text"
                     name="businessName"
-                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition"
+                    class="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-gray-400 transition focus:border-yellow-400 focus:outline-none"
                     placeholder="Smith Electric LLC"
                   />
                 </div>
                 <div>
-                  <label class="block text-sm text-gray-300 mb-1">Arizona City *</label>
-                  <select 
+                  <label class="mb-1 block text-gray-300 text-sm"
+                    >Arizona City *</label
+                  >
+                  <select
                     name="city"
                     required
-                    class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:border-yellow-400 transition"
+                    class="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white transition focus:border-yellow-400 focus:outline-none"
                   >
-                    <option value="" class="bg-gray-900">Select your city</option>
-                    {arizonaCities.map((city) => (
-                      <option value={city} class="bg-gray-900">{city}</option>
-                    ))}
-                    <option value="other" class="bg-gray-900">Other Arizona City</option>
+                    <option value="" class="bg-gray-900"
+                      >Select your city</option
+                    >
+                    {
+                      arizonaCities.map((city) => (
+                        <option value={city} class="bg-gray-900">
+                          {city}
+                        </option>
+                      ))
+                    }
+                    <option value="other" class="bg-gray-900"
+                      >Other Arizona City</option
+                    >
                   </select>
                 </div>
               </div>
               <div>
-                <label class="block text-sm text-gray-300 mb-1">Annual Revenue</label>
-                <select 
+                <label class="mb-1 block text-gray-300 text-sm"
+                  >Annual Revenue</label
+                >
+                <select
                   name="revenue"
-                  class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:border-yellow-400 transition"
+                  class="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-white transition focus:border-yellow-400 focus:outline-none"
                 >
                   <option value="" class="bg-gray-900">Select range</option>
-                  <option value="0-100k" class="bg-gray-900">Under $100,000</option>
-                  <option value="100k-250k" class="bg-gray-900">$100,000 - $250,000</option>
-                  <option value="250k-500k" class="bg-gray-900">$250,000 - $500,000</option>
-                  <option value="500k-1m" class="bg-gray-900">$500,000 - $1,000,000</option>
+                  <option value="0-100k" class="bg-gray-900"
+                    >Under $100,000</option
+                  >
+                  <option value="100k-250k" class="bg-gray-900"
+                    >$100,000 - $250,000</option
+                  >
+                  <option value="250k-500k" class="bg-gray-900"
+                    >$250,000 - $500,000</option
+                  >
+                  <option value="500k-1m" class="bg-gray-900"
+                    >$500,000 - $1,000,000</option
+                  >
                   <option value="1m+" class="bg-gray-900">$1,000,000+</option>
                 </select>
               </div>
-              <button 
+              <button
                 type="submit"
-                class="w-full py-4 bg-gradient-to-r from-yellow-500 to-amber-500 text-white font-bold rounded-lg shadow-lg shadow-yellow-500/25 hover:shadow-yellow-500/40 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
+                class="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-yellow-500 to-amber-500 py-4 font-bold text-white shadow-lg shadow-yellow-500/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-yellow-500/40"
               >
-                <Icon name="mdi:shield-check" class="w-5 h-5" />
+                <Icon name="mdi:shield-check" class="h-5 w-5" />
                 Get My Free Quote
               </button>
-              <p class="text-xs text-gray-400 text-center">
+              <p class="text-center text-gray-400 text-xs">
                 No obligation. Your information is secure and never shared.
               </p>
             </form>
           </div>
         </div>
-        
-        <div class="hidden lg:block relative">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10 rounded-3xl"></div>
-          <Image 
-            src={handymanHero} 
-            alt="Professional Electrician in Arizona" 
+
+        <div class="relative hidden lg:block">
+          <div
+            class="absolute inset-0 z-10 rounded-3xl bg-gradient-to-t from-slate-900/80 to-transparent"
+          >
+          </div>
+          <Image
+            src={handymanHero}
+            alt="Professional Electrician in Arizona"
             class="rounded-3xl shadow-2xl shadow-yellow-500/20"
             width={600}
             height={600}
           />
           <div class="absolute bottom-8 left-8 right-8 z-20">
-            <div class="bg-white/10 backdrop-blur-lg rounded-xl p-4 border border-white/20">
+            <div
+              class="rounded-xl border border-white/20 bg-white/10 p-4 backdrop-blur-lg"
+            >
               <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                  <Icon name="mdi:check" class="w-6 h-6 text-white" />
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-green-500"
+                >
+                  <Icon name="mdi:check" class="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <p class="text-white font-semibold">Coverage Starting At</p>
-                  <p class="text-2xl font-bold text-yellow-400">$45/month</p>
+                  <p class="font-semibold text-white">Coverage Starting At</p>
+                  <p class="font-bold text-yellow-400 text-2xl">$45/month</p>
                 </div>
               </div>
             </div>
@@ -299,114 +434,163 @@ const electricalServices = [
     </section>
 
     <script is:inline>
-      const form = document.getElementById('quote-form');
-      form?.addEventListener('submit', async (e) => {
+      const form = document.getElementById("quote-form");
+      form?.addEventListener("submit", async (e) => {
         e.preventDefault();
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
-        data.services = formData.getAll('services');
+        data.services = formData.getAll("services");
         const button = form.querySelector('button[type="submit"]');
         const originalText = button.innerHTML;
-        
+
         button.disabled = true;
-        button.innerHTML = 'Sending...';
-        
+        button.innerHTML = "Sending...";
+
         try {
-          const response = await fetch('/api/submit-quote', {
-            method: 'POST',
+          const response = await fetch("/api/submit-quote", {
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
           });
-          
+
           if (response.ok) {
-            button.innerHTML = 'Quote Requested!';
-            button.classList.remove('bg-gradient-to-r', 'from-yellow-500', 'to-amber-500');
-            button.classList.add('bg-green-600');
+            button.innerHTML = "Quote Requested!";
+            button.classList.remove(
+              "bg-gradient-to-r",
+              "from-yellow-500",
+              "to-amber-500",
+            );
+            button.classList.add("bg-green-600");
             form.reset();
             setTimeout(() => {
               button.disabled = false;
               button.innerHTML = originalText;
-              button.classList.add('bg-gradient-to-r', 'from-yellow-500', 'to-amber-500');
-              button.classList.remove('bg-green-600');
+              button.classList.add(
+                "bg-gradient-to-r",
+                "from-yellow-500",
+                "to-amber-500",
+              );
+              button.classList.remove("bg-green-600");
             }, 5000);
           } else {
-            throw new Error('Failed to send');
+            throw new Error("Failed to send");
           }
         } catch (error) {
-          console.error('Error:', error);
-          button.innerHTML = 'Error. Please Try Again.';
-          button.classList.add('bg-red-600');
+          console.error("Error:", error);
+          button.innerHTML = "Error. Please Try Again.";
+          button.classList.add("bg-red-600");
           setTimeout(() => {
             button.disabled = false;
             button.innerHTML = originalText;
-            button.classList.remove('bg-red-600');
+            button.classList.remove("bg-red-600");
           }, 3000);
         }
       });
     </script>
 
     <!-- Why Electrician Insurance Matters in Arizona -->
-    <section class="py-24 px-8 bg-offset">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <section class="bg-offset px-8 py-24">
+      <div class="mx-auto max-w-6xl">
+        <div class="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-6">
-              Why Arizona Electricians <span class="text-primary">Need Specialized Coverage</span>
+            <h2 class="mb-6 font-extrabold text-3xl md:text-4xl">
+              Why Arizona Electricians <span class="text-primary"
+                >Need Specialized Coverage</span
+              >
             </h2>
-            <p class="text-lg text-offset mb-6 leading-relaxed">
-              Arizona's booming construction and extreme heat put unique demands on electrical systems. 
-              From new construction to solar installations, your customers depend on 
-              you for safe, reliable electrical work. That's why you need insurance that 
-              understands the Arizona electrical industry.
+            <p class="mb-6 leading-relaxed text-offset text-lg">
+              Arizona's booming construction and extreme heat put unique demands
+              on electrical systems. From new construction to solar
+              installations, your customers depend on you for safe, reliable
+              electrical work. That's why you need insurance that understands
+              the Arizona electrical industry.
             </p>
             <div class="space-y-4">
-              <div class="flex items-start gap-4 p-4 bg-default rounded-xl border border-default">
-                <div class="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center">
-                  <Icon name="mdi:fire" class="w-5 h-5 text-red-500" />
+              <div
+                class="flex items-start gap-4 rounded-xl border border-default bg-default p-4"
+              >
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-red-500/20"
+                >
+                  <Icon name="mdi:fire" class="h-5 w-5 text-red-500" />
                 </div>
                 <div>
-                  <h4 class="font-semibold mb-1">Fire Risk Coverage</h4>
-                  <p class="text-sm text-offset">Electrical fires are a serious liability. We ensure you're properly protected.</p>
+                  <h4 class="mb-1 font-semibold">Fire Risk Coverage</h4>
+                  <p class="text-offset text-sm">
+                    Electrical fires are a serious liability. We ensure you're
+                    properly protected.
+                  </p>
                 </div>
               </div>
-              <div class="flex items-start gap-4 p-4 bg-default rounded-xl border border-default">
-                <div class="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center">
-                  <Icon name="mdi:solar-power" class="w-5 h-5 text-yellow-500" />
+              <div
+                class="flex items-start gap-4 rounded-xl border border-default bg-default p-4"
+              >
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-yellow-500/20"
+                >
+                  <Icon
+                    name="mdi:solar-power"
+                    class="h-5 w-5 text-yellow-500"
+                  />
                 </div>
                 <div>
-                  <h4 class="font-semibold mb-1">Solar & EV Charging</h4>
-                  <p class="text-sm text-offset">Arizona leads in solar adoption. We cover emerging electrical technologies.</p>
+                  <h4 class="mb-1 font-semibold">Solar & EV Charging</h4>
+                  <p class="text-offset text-sm">
+                    Arizona leads in solar adoption. We cover emerging
+                    electrical technologies.
+                  </p>
                 </div>
               </div>
-              <div class="flex items-start gap-4 p-4 bg-default rounded-xl border border-default">
-                <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
-                  <Icon name="mdi:thermometer-high" class="w-5 h-5 text-blue-500" />
+              <div
+                class="flex items-start gap-4 rounded-xl border border-default bg-default p-4"
+              >
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/20"
+                >
+                  <Icon
+                    name="mdi:thermometer-high"
+                    class="h-5 w-5 text-blue-500"
+                  />
                 </div>
                 <div>
-                  <h4 class="font-semibold mb-1">Heat-Related Demands</h4>
-                  <p class="text-sm text-offset">Extreme heat increases electrical load and service calls.</p>
+                  <h4 class="mb-1 font-semibold">Heat-Related Demands</h4>
+                  <p class="text-offset text-sm">
+                    Extreme heat increases electrical load and service calls.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
           <div class="grid grid-cols-2 gap-4">
-            <div class="p-6 bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 rounded-2xl border border-yellow-500/20">
-              <div class="text-4xl font-extrabold text-yellow-400 mb-2">300+</div>
-              <p class="text-sm text-offset">sunny days per year in AZ</p>
+            <div
+              class="rounded-2xl border border-yellow-500/20 bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 p-6"
+            >
+              <div class="mb-2 font-extrabold text-yellow-400 text-4xl">
+                300+
+              </div>
+              <p class="text-offset text-sm">sunny days per year in AZ</p>
             </div>
-            <div class="p-6 bg-gradient-to-br from-red-500/20 to-red-600/20 rounded-2xl border border-red-500/20">
-              <div class="text-4xl font-extrabold text-red-400 mb-2">$50K</div>
-              <p class="text-sm text-offset">average fire damage claim</p>
+            <div
+              class="rounded-2xl border border-red-500/20 bg-gradient-to-br from-red-500/20 to-red-600/20 p-6"
+            >
+              <div class="mb-2 font-extrabold text-red-400 text-4xl">$50K</div>
+              <p class="text-offset text-sm">average fire damage claim</p>
             </div>
-            <div class="p-6 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl border border-green-500/20">
-              <div class="text-4xl font-extrabold text-green-400 mb-2">4,500+</div>
-              <p class="text-sm text-offset">licensed electricians in AZ</p>
+            <div
+              class="rounded-2xl border border-green-500/20 bg-gradient-to-br from-green-500/20 to-green-600/20 p-6"
+            >
+              <div class="mb-2 font-extrabold text-green-400 text-4xl">
+                4,500+
+              </div>
+              <p class="text-offset text-sm">licensed electricians in AZ</p>
             </div>
-            <div class="p-6 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-2xl border border-blue-500/20">
-              <div class="text-4xl font-extrabold text-blue-400 mb-2">#2</div>
-              <p class="text-sm text-offset">state for solar installations</p>
+            <div
+              class="rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-500/20 to-blue-600/20 p-6"
+            >
+              <div class="mb-2 font-extrabold text-blue-400 text-4xl">#2</div>
+              <p class="text-offset text-sm">state for solar installations</p>
             </div>
           </div>
         </div>
@@ -414,109 +598,127 @@ const electricalServices = [
     </section>
 
     <!-- Coverage Types Section -->
-    <section id="coverage" class="py-24 px-8 bg-default">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-5xl font-extrabold mb-4">
+    <section id="coverage" class="bg-default px-8 py-24">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 font-extrabold text-3xl md:text-5xl">
             Complete <span class="text-primary">Electrician Coverage</span>
           </h2>
-          <p class="text-xl text-offset max-w-2xl mx-auto">
-            Comprehensive protection designed specifically for Arizona electrical contractors and their unique risks.
+          <p class="mx-auto max-w-2xl text-offset text-xl">
+            Comprehensive protection designed specifically for Arizona
+            electrical contractors and their unique risks.
           </p>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {coverageTypes.map((coverage) => (
-            <div class="group p-6 bg-offset rounded-2xl border border-default hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-500 to-amber-500 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                <Icon name={coverage.icon} class="w-7 h-7 text-white" />
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {
+            coverageTypes.map((coverage) => (
+              <div class="hover:border-primary/50 group rounded-2xl border border-default bg-offset p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-yellow-500 to-amber-500 transition-transform group-hover:scale-110">
+                  <Icon name={coverage.icon} class="h-7 w-7 text-white" />
+                </div>
+                <h3 class="mb-3 font-bold text-xl">{coverage.title}</h3>
+                <p class="mb-4 text-offset text-sm">{coverage.description}</p>
+                <ul class="space-y-2">
+                  {coverage.details.map((detail) => (
+                    <li class="flex items-center gap-2 text-sm">
+                      <Icon
+                        name="mdi:check-circle"
+                        class="h-4 w-4 flex-shrink-0 text-green-500"
+                      />
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 class="text-xl font-bold mb-3">{coverage.title}</h3>
-              <p class="text-offset text-sm mb-4">{coverage.description}</p>
-              <ul class="space-y-2">
-                {coverage.details.map((detail) => (
-                  <li class="flex items-center gap-2 text-sm">
-                    <Icon name="mdi:check-circle" class="w-4 h-4 text-green-500 flex-shrink-0" />
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
 
     <!-- Arizona Locations Section -->
-    <section class="py-24 px-8 bg-offset">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
-            Serving Electricians <span class="text-primary">Across Arizona</span>
+    <section class="bg-offset px-8 py-24">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-12 text-center">
+          <h2 class="mb-4 font-extrabold text-3xl md:text-4xl">
+            Serving Electricians <span class="text-primary">Across Arizona</span
+            >
           </h2>
-          <p class="text-lg text-offset max-w-2xl mx-auto">
-            From Phoenix to Flagstaff, we provide coverage wherever you work in Arizona.
+          <p class="mx-auto max-w-2xl text-offset text-lg">
+            From Phoenix to Flagstaff, we provide coverage wherever you work in
+            Arizona.
           </p>
         </div>
-        
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          {arizonaCities.map((city) => (
-            <div class="flex items-center justify-center gap-2 p-4 bg-default rounded-xl border border-default hover:border-primary/50 transition-all">
-              <Icon name="mdi:map-marker" class="w-4 h-4 text-yellow-500" />
-              <span class="font-medium">{city}</span>
-            </div>
-          ))}
+
+        <div
+          class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
+        >
+          {
+            arizonaCities.map((city) => (
+              <div class="hover:border-primary/50 flex items-center justify-center gap-2 rounded-xl border border-default bg-default p-4 transition-all">
+                <Icon name="mdi:map-marker" class="h-4 w-4 text-yellow-500" />
+                <span class="font-medium">{city}</span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-24 px-8 bg-default">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-5xl font-extrabold mb-4">
+    <section id="faq" class="bg-default px-8 py-24">
+      <div class="mx-auto max-w-4xl">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 font-extrabold text-3xl md:text-5xl">
             Electrician Insurance <span class="text-primary">FAQ</span>
           </h2>
         </div>
-        
+
         <div class="space-y-4">
-          {faqs.map((faq) => (
-            <details class="group bg-offset rounded-xl border border-default overflow-hidden">
-              <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-primary/5 transition-colors">
-                <h3 class="font-semibold text-lg pr-4">{faq.question}</h3>
-                <Icon name="mdi:chevron-down" class="w-6 h-6 text-primary transition-transform group-open:rotate-180 flex-shrink-0" />
-              </summary>
-              <div class="px-6 pb-6 text-offset">
-                <p>{faq.answer}</p>
-              </div>
-            </details>
-          ))}
+          {
+            faqs.map((faq) => (
+              <details class="group overflow-hidden rounded-xl border border-default bg-offset">
+                <summary class="hover:bg-primary/5 flex cursor-pointer items-center justify-between p-6 transition-colors">
+                  <h3 class="pr-4 font-semibold text-lg">{faq.question}</h3>
+                  <Icon
+                    name="mdi:chevron-down"
+                    class="h-6 w-6 flex-shrink-0 text-primary transition-transform group-open:rotate-180"
+                  />
+                </summary>
+                <div class="px-6 pb-6 text-offset">
+                  <p>{faq.answer}</p>
+                </div>
+              </details>
+            ))
+          }
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 px-8 bg-gradient-to-r from-yellow-600 to-amber-600">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+    <section class="bg-gradient-to-r from-yellow-600 to-amber-600 px-8 py-24">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="mb-6 font-extrabold text-white text-3xl md:text-5xl">
           Protect Your Electrical Business Today
         </h2>
-        <p class="text-xl text-yellow-100 mb-10 max-w-2xl mx-auto">
-          Don't let one incident put your business at risk. Get comprehensive electrician insurance and keep powering Arizona.
+        <p class="mx-auto mb-10 max-w-2xl text-yellow-100 text-xl">
+          Don't let one incident put your business at risk. Get comprehensive
+          electrician insurance and keep powering Arizona.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="#quote-form" 
-            class="px-8 py-4 bg-white text-yellow-600 font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+        <div class="flex flex-col justify-center gap-4 sm:flex-row">
+          <a
+            href="#quote-form"
+            class="rounded-xl bg-white px-8 py-4 font-bold text-yellow-600 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
             onclick="document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'}); return false;"
           >
             Get Your Free Quote Now
           </a>
-          <a 
-            href="tel:+16028889289" 
-            class="px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2"
+          <a
+            href="tel:+16028889289"
+            class="flex items-center justify-center gap-2 rounded-xl border-2 border-white px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white/10"
           >
-            <Icon name="mdi:phone" class="w-5 h-5" />
+            <Icon name="mdi:phone" class="h-5 w-5" />
             (602) 888-9289
           </a>
         </div>
