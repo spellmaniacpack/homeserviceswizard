@@ -438,6 +438,10 @@ const roofingServices = [
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
         data.services = formData.getAll("services");
+        data.profession = "roofing";
+        data.pageUrl = window.location.href;
+        data.submittedAt = new Date().toISOString();
+        data.referrer = document.referrer || "direct";
         const button = form.querySelector('button[type="submit"]');
         const originalText = button.innerHTML;
 
